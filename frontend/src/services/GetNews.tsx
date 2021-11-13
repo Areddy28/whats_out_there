@@ -25,5 +25,3 @@ export function getNews(): Promise<NewsInterface> {
     .then(res => res.data)
 }
 
-// gnews
-// key: b1699b1b5b5eaa294a088cd7eb40de6a
