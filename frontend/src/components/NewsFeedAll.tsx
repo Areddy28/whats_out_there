@@ -71,11 +71,3 @@ export default function NewsFeedAll() {
     </div>
   )
 }
-
-
-
-
-// // newsapi key
-// //  01506b975fb14e549a407f6016bb935b
-// // https://newsapi.org/v2/everything?domains=nasa.gov&apiKey=01506b975fb14e549a407f6016bb935b
-// // https://newsapi.org/

@@ -119,8 +119,8 @@ export default function HomeParkSearch() {
         console.log(searchInputs[0]);
         getSetWeather(zipLat, zipLon).then(res => setWeather(res));
         getWeekForecast(zipLat, zipLon).then((res) => setForecast(res));
-
-    }, [numParks])
+        
+    }, [zipLat])
 
     function reloadParkList () {
         getParkList().then(res => setDarkParkList([...darkParkList]));
@@ -271,7 +271,7 @@ export default function HomeParkSearch() {
                                             {[...Array(5)].map((star, index) => {
                                                  index += 1;
                                                 return(
-                                                    <li key={index} id="star-rating2" className={index <= comment.rating ? "clicked" : "star"}><i className="fas fa-star star5"></i></li>
+                                                    <li key={index}  className={index <= comment.rating ? "clicked" : "star"}><i className="fas fa-star star5"></i></li>
                                                 )
                                             })}
                                             </ul>

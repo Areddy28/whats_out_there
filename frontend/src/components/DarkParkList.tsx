@@ -12,6 +12,7 @@ import darkpark1 from "../images/darkpark1.jpg";
 import darkpark2 from "../images/darkpark2.jpg";
 import darkpark3 from "../images/darkpark3.jpg";
 import darkpark4 from "../images/darkpark4.jpg";
+import Carousel from "./Carousel";
 
 
 
@@ -45,6 +46,7 @@ export default function DarkParkList(): any {
 
   return (
     <div>
+
       <DarkParkSearch />
 
       {/* dark park pic above the list: */}

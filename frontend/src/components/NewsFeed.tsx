@@ -22,7 +22,7 @@ export default function NewsFeed({ title, url, description, content, publishedAt
                 <div className="newsfeed-text">
                     <p className="newsfeed_title">{title}</p>
                     <p className="newsfeed_content">{description}</p>
-                    <a href={url} className="newsfeed_url">Click to read full story</a>
+                    <a href={url} className="newsfeed_url" target="_blank">Click to read full story</a>
                 </div>
             </div>
         </div>

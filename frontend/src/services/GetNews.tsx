@@ -24,4 +24,3 @@ export function getNews(): Promise<NewsInterface> {
     return axios.get<NewsInterface>(`https://gnews.io/api/v4/top-headlines?q=nasa&topic=science&token=${newsKey}&lang=en`)
     .then(res => res.data)
 }
-

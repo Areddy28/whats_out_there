@@ -104,7 +104,7 @@ export default function DarkParkSearch() {
             <div className="park-list">
                 {darkParkList.sort((a, b) => a.miles - b.miles).map((data, index) => {
                     return (
-                        <div key={index} className="info-card">
+                        <div key={index} className="info-card park-list-card">
                             <p className="park-list-name"><a href={data.url} target="_blank">{data.name}</a></p>
                             <p>{data.state}</p>
                             <p>{data.description}</p>
