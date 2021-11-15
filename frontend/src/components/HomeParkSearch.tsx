@@ -35,45 +35,6 @@ export default function HomeParkSearch() {
     let star4: HTMLElement = document.getElementById("star-rating4")!;
     let star5: HTMLElement = document.getElementById("star-rating5")!;
 
-    const changeColor = (n:number) => {
-        if (n == 1) {
-           star1.classList.add("clicked");
-
-           star2.classList.remove("clicked");
-           star3.classList.remove("clicked");
-           star4.classList.remove("clicked");
-           star5.classList.remove("clicked");
-       
-        } else if (n == 2) {
-           star1.classList.add("clicked")
-           star2.classList.add("clicked")
-
-           star3.classList.remove("clicked");
-           star4.classList.remove("clicked");
-           star5.classList.remove("clicked");
-        } else if (n == 3) {
-           star1.classList.add("clicked")
-           star2.classList.add("clicked")
-           star3.classList.add("clicked")
-
-           star4.classList.remove("clicked");
-           star5.classList.remove("clicked");
-        } else if (n == 4) {
-           star1.classList.add("clicked")
-           star2.classList.add("clicked")
-           star3.classList.add("clicked")
-           star4.classList.add("clicked")
-
-           star5.classList.remove("clicked");
-        } else if (n == 5) {
-           star1.classList.add("clicked")
-           star2.classList.add("clicked")
-           star3.classList.add("clicked")
-           star4.classList.add("clicked")
-           star5.classList.add("clicked")
-        }
-        console.log(n)
-    }
        
 
     // const[searchLatLon, setSearchLatLon] = useState<SearchProps>({searchLat: zipLat, searchLon: zipLon});
@@ -119,7 +80,11 @@ export default function HomeParkSearch() {
         console.log(searchInputs[0]);
         getSetWeather(zipLat, zipLon).then(res => setWeather(res));
         getWeekForecast(zipLat, zipLon).then((res) => setForecast(res));
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> e718243d35d33d421e07315cbdfc2c6edeaf17e1
     }, [zipLat])
 
     function reloadParkList () {
@@ -164,7 +129,7 @@ export default function HomeParkSearch() {
 
                                 })
                                 searchInputs.unshift({ searchLat: zipLat, searchLon: zipLon, hasSearched: true });
-                                // console.log(searchInputs)
+                                console.log(searchInputs)
 
                             }
                         }} />
@@ -228,7 +193,7 @@ export default function HomeParkSearch() {
                                             {[...Array(5)].map((star, index) => {
                                                  index += 1;
                                                 return(
-                                                    <li key={index} id="star-rating2" className={index <= rating ? "clicked" : "star"}   onClick={(e) => {e.preventDefault(); var target = e.target as Element; setRating(index); }}><i className="fas fa-star star5"></i></li>
+                                                    <li key={index} className={index <= rating ? "clicked" : "star"}   onClick={(e) => {e.preventDefault(); var target = e.target as Element; setRating(index); }}><i className="fas fa-star star5"></i></li>
                                                 )
                                             })}
                                             {/* This sets up a new array of 5 with stars inside. If the index is less than or equal to the rating, then is has a the classname "clicked" and turns orange. */}

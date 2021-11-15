@@ -32,8 +32,8 @@ export default function LearnMore() {
 
 
             {/* <div className="BackgroundImage"> */}
-            {/* <div className = "BackgroundImage" style={{backgroundImage: `url(${picURL?.url})`}}> */}
-            <div className = "BackgroundImage" style={{backgroundImage: `url(https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/potw2101a_0.jpg)`}}>
+            <div className = "BackgroundImage" style={{backgroundImage: `url(${picURL?.url})`}}>
+            {/* <div className = "BackgroundImage" style={{backgroundImage: `url(https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/potw2101a_0.jpg)`}}> */}
                 <div className="info-card learn-more-card">
                     <h1 aria-label = "addh1" role = "h1">Learn More about our Parks</h1>
                     <h2>Below lists the definitions of designations from the International Dark-Sky Association</h2>
