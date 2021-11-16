@@ -618,7 +618,8 @@ details {
 }
 
 /* ~~~~~~~~~~~~~ TABLET VIEW ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
+/* This is where responsive design occures anything with media queries*/
+/* Anything thing 768 and below will have the styles above this media query line 619 and up is moble view below is tabel and desktop*/
 @media only screen and (min-width: 768px) {
   .timezone_h3,
   .weather_conditions_p {
@@ -655,6 +656,7 @@ details {
   }
 
   /* ~~~~~~~~~~~~~~~~~~~~ TABLET VIEW FORECAST MODAL ~~~~~~~~~~~~~~~~~~` */
+  /* Also used flex-box so the images would be more dynamic*/
   .modal {
     display: flex;
     flex-wrap: wrap;

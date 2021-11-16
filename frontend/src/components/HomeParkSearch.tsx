@@ -11,6 +11,7 @@ import { upDateOne } from "../services/GetParkList";
 import { SearchContext } from "../context/SearchProvider";
 import Header from "./Header";
 import NavbarWeather from "./NavbarWeather";
+import AuthContext from "../context/AuthContext";
 
 
 
@@ -18,6 +19,7 @@ export default function HomeParkSearch() {
     // receive zip code from form
     // make sure it's on the list. If not return an err message
     // return lon/lat , 
+    const {user} = useContext(AuthContext); 
     const { searchInputs } = useContext(SearchContext);
     const [zipLat, setZipLat] = useState(searchInputs[0].searchLat);
     const [zipLon, setZipLon] = useState(searchInputs[0].searchLon);
@@ -39,6 +41,8 @@ export default function HomeParkSearch() {
 
     // const[searchLatLon, setSearchLatLon] = useState<SearchProps>({searchLat: zipLat, searchLon: zipLon});
     
+    //Useeffect is where we are loading the data for any recent changes and thats where we get our api to call.
+    //This happens everytime our page loads thus when we refresh it updates any changes. 
     useEffect(() => {
         getParkList().then(function (res) {
             {
@@ -80,11 +84,6 @@ export default function HomeParkSearch() {
         console.log(searchInputs[0]);
         getSetWeather(zipLat, zipLon).then(res => setWeather(res));
         getWeekForecast(zipLat, zipLon).then((res) => setForecast(res));
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> e718243d35d33d421e07315cbdfc2c6edeaf17e1
     }, [zipLat])
 
     function reloadParkList () {
@@ -160,6 +159,7 @@ export default function HomeParkSearch() {
                             
                             <a href={data.url} target="_blank" className="more-details-link">More Details</a>
                             {/* Comment Form below */}
+                            {/*href to link to the park details page*/}
                             <details onClick={() => {
                                for (let i = 0; i < document.querySelectorAll("details").length; i++) {
                                 if (document.querySelectorAll("details")[i].open) {
@@ -172,7 +172,19 @@ export default function HomeParkSearch() {
                                 <summary><span className="leaveRatingComment_h2">Click to Leave a Rating and Comment</span></summary>
                                 <form method="PUT" id="comment-form" className="info-card" onSubmit={(e) => {
                                     e.preventDefault();
-                                    let newComment: Comments = { rating, comment };
+                                    if(user?.displayName != null) 
+                                    {
+
+                                        var userName = user.displayName; 
+                                        
+                                    } else if (user?.displayName != null) 
+                                    {
+                                        var photoUrl = user.displayName; 
+                                    }
+                                    else {
+                                        var userName = "Anonymous"
+                                    }
+                                    let newComment: Comments = { rating, comment, userName, photoUrl };
                                     // testing to see if pushing would refresh the page, it did not
                                     upDateOne(data._id, newComment).then(res => data.comments.push(res))
                                     setRating(0);
@@ -241,6 +253,7 @@ export default function HomeParkSearch() {
                                             })}
                                             </ul>
                                             <p>"{comment.comment}"</p>
+                                            <p>"{comment.userName}"</p>
                                         </div>
                                         </div>
                                     )

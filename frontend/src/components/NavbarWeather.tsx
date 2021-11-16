@@ -69,6 +69,7 @@ export default function NavbarWeather({ weather }: Props) {
             </div>
 
             <div className="modal_container hidden">
+                {/* Using a component for forcast to be within the navbar component. We are using a component within a component */}
                 <Forecast />
             </div>
         </div>

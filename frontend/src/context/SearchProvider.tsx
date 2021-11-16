@@ -31,6 +31,7 @@ export const SearchProvider = ({children}: {children: ReactNode}) => {
     const [searchLat, setSearchLat] = useState<SearchProps>();
     const[searchLon, setSearchLon] = useState<SearchProps>();
     const[hasSearched, setHasSearched] = useState<SearchProps>();
+    //hardcoded detroit location for lat and long
     const[searchInputs, setSearchInputs] = useState<SearchProps[]>([{searchLat: 42.33, searchLon:-83.04, hasSearched: false}])
 
     return (

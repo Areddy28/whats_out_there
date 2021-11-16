@@ -29,6 +29,8 @@ routes.put(`/darkparks/addcomment/:id`, async (req, res) => {
     try {
         const client = await getClient();
         await client.db()
+        //adding comments from user to change/edit our database for there needs
+        //uses array called comments to view the comments 
         .collection<DarkPark>('darkparks')
         .updateOne({_id: new ObjectId(id)}, {$push: {comments: newComment}});
         res.status(200).json(newComment)

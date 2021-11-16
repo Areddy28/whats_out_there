@@ -7,7 +7,7 @@ import telescope_Left from "../images/telescope_Left.svg"
 
 
 export default function NewsRoute() {
-    const [news, setNews] = useState<NewsInterface>()
+    //const [news, setNews] = useState<NewsInterface>() 
     const [articles, setArticles] = useState<ArticlesEntity[]>()
     useEffect(() => {
         loadNews();
@@ -16,8 +16,9 @@ export default function NewsRoute() {
         getNews().then(res => {
             console.log(res)
             // setNews(res)
+            //json data setting it to articles
             setArticles(res.articles)
-            console.log(news)
+            //console.log(news)
         })
     }
 
@@ -25,6 +26,7 @@ export default function NewsRoute() {
     return (
         <div className="news-container">
             <h2 className="newsfeed_h2">Top 3 News Feed</h2>
+            {/* maps through the articles and setting new feed for the top 3*/}
             {articles?.map((article, index) => {
                 function assignImage(index: any) {
                     if (index % 2 == 0) {
@@ -38,6 +40,7 @@ export default function NewsRoute() {
                 return (
                     <div key={index} className="newsArticle_div">
                         <img src={assignImage(index)} alt="telescope inside of a circle" className="telescope_img" />
+                        {/* props passing down with our title, source, description, etc.*/}
                         <NewsFeed title={article.title} source={article.source} description={article.description} url={article.url} image={article.image} publishedAt={article.publishedAt} content={article.content} />
                     </div>
                 )

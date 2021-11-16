@@ -21,7 +21,7 @@ function App() {
     <SearchProvider>
       <div className="App">
         <Router>
-          {/* <Switch> */}
+          <Switch> 
             <Route path="/news" exact>
               <NewsFeedAll />
             </Route>
@@ -36,9 +36,8 @@ function App() {
             </Route>
             <Route path="/" exact>
               <Container />
-              {/* <Homepage /> */}
             </Route>
-          {/* </Switch> */}
+          </Switch>
         </Router>
 
         {/* <Homepage/>
