@@ -22,11 +22,7 @@ routes.put(`/darkparks/addcomment/:id`, async (req, res) => {
     const newComment: Comments = {
         rating: req.body.rating,
         comment: req.body.comment,
-<<<<<<< HEAD
-        userName: req.body.userName, 
-=======
         userName: req.body.userName,
->>>>>>> 29331b807931ad0eb6e4056f97e907824e4410ea
         photoURL: req.body.photoURL
     }
     const id = req.params.id;

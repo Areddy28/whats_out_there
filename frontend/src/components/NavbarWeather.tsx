@@ -37,6 +37,7 @@ export default function NavbarWeather({ weather }: Props) {
                     <li className="navbar-item"><NavLink to="/learnmore" style={{ textDecoration: "none" }}>Learn More</NavLink></li>
                     <li className="navbar-item"><NavLink to="/news" style={{ textDecoration: "none" }}>News</NavLink></li>
                     <li className="navbar-item"><NavLink to="/darkparklist" style={{ textDecoration: "none" }}>Park List</NavLink></li>
+                    <GoogleAuth/>
                 </ul>
             </nav>
 

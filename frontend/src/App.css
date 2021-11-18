@@ -729,6 +729,15 @@ details {
     width: 60vw;
   }
 
+  .comments-list {
+    flex: 1.8 1;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+
+  }
+
   /* ~~~~~~~~~~~~~~~~~~~~ TABLET VIEW FORECAST MODAL ~~~~~~~~~~~~~~~~~~` */
   /* Also used flex-box so the images would be more dynamic*/
   .modal {
@@ -960,6 +969,7 @@ details {
     height: 3rem;
     background: none;
     max-width: 60%;
+    padding-inline-start: 0px;
   }
 
   .navbar-item > a {
@@ -1005,6 +1015,7 @@ details {
 
   .comment-card {
     flex: 0.6;
+
   }
 
   /* Steph added this, don't delete it! */

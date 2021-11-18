@@ -16,7 +16,7 @@ export default function Header() {
 
            <WeatherRoute /> */}
 
-            <GoogleAuth />
+            {/* <GoogleAuth /> */}
 
             <img aria-label="addedImage" role="Image" src={fence} alt="fence with night sky in the background." className="fence_pic" />
             <h1 aria-label="addedTitle" role="Title" className="homepage_h1">What's Out There?</h1>
