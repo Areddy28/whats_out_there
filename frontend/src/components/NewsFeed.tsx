@@ -2,18 +2,23 @@
 // uses the newsapi
 // TO DO: make route to newsapi
 import placeholder from "../images/placeholder.png"
+import parklistbackground from "../images/parklistbackground.png"
 import { ArticlesEntity } from "../models/NewsInterface";
 
 // used type "any" to avoid errors, but switch back to "ArticlesEntity" when retrieving all the data.
 //these are the props on newsfeed passed to newsfeedroutes
 export default function NewsFeed({ title, url, description, content, publishedAt, image }: ArticlesEntity) {
     function replaceImage(image: any) {
-        if (image.includes("403")){
+        if (image.includes('403') || !image.includes("jpg")){
           return placeholder;
         } else {
             return image
         }
       }
+
+    function handleError(){
+        // onError={(e) => {e.target.onerror = null; e.target.src = placeholder}}
+    }
 
 
     return (

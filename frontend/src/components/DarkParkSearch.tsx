@@ -23,7 +23,7 @@ export default function DarkParkSearch() {
     const [forecast, setForecast] = useState<WeatherInterface>();
     const [numParks, setNumParks] = useState(0);
 
-    
+
     useEffect(() => {
         getParkList().then(function (res) {
             {
@@ -73,12 +73,13 @@ export default function DarkParkSearch() {
 
             <NavbarWeather weather={weather} />
 
-            <div className="park-search">
-            <form className="park-search-form" aria-label="addForm" role="Form" onSubmit={(e) => { console.log(searchInputs); }}>
-            <h2 className="park-search-headline">Enter your zip to find parks near you.</h2>
+            <div className="dark-park-search">
+            <h2 className="dark-park-search-headline">Enter your zip to find parks near you.</h2>
+            <form className="dark-park-search-form" aria-label="addForm" role="Form" onSubmit={(e) => { console.log(searchInputs); }}>
+           
                 <label className="park-search-label" aria-label="addLabel" role="Label" htmlFor="search"></label>
 
-                    <input className="park-search-zip" name="search" id="search" type="text" placeholder="Enter Your Zip" onChange={(e) => {
+                    <input className="dark-park-search-zip" name="search" id="search" type="text" placeholder="Enter Your Zip" onChange={(e) => {
                         if (e.target.value.length == 5) {
                             LongLat.forEach(array => {
                                 setNumParks(10);
@@ -90,7 +91,7 @@ export default function DarkParkSearch() {
                             })
                         }
                     }} />
-                <button className="park-search-button" aria-label="addButton" role="Button" type="submit" onClick={(e) => {
+                <button className="dark-park-search-button" aria-label="addButton" role="Button" type="submit" onClick={(e) => {
                     e.preventDefault();
                     console.log(zipLat);
                     console.log(zipLon);

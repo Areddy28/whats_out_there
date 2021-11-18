@@ -1,4 +1,4 @@
-/* Jim testing */
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -301,6 +301,7 @@ header {
   display: none;
 }
 
+
 .park-search-form {
   display: flex;
   flex-direction: column;
@@ -339,6 +340,60 @@ header {
   background: #ed6a5a;
   color: #dde0e0;
 }
+/* ~~~~~~~~~~~~~~~~~ DARK PARK SEARCH ~~~~~~~~~~~~~ */
+.dark-park-search{
+  height: 12vh;
+}
+
+.dark-park-search-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  width: 100%;
+}
+
+.dark-park-search-zip {
+  /* margin: .5rem; */
+  box-sizing: border-box;
+  padding: .5em 1.5em;
+  width: 30%;
+  border: 3px solid #dde0e0;
+  border-radius: 50px;
+  margin-bottom: 0.5em;
+  font-size: .6rem;
+}
+
+.dark-park-search-button {
+  /* margin: .5rem; */
+  padding: .25em 1em;
+  color: #2d3047;
+  background-color: #93b7be;
+  border: none;
+  border-radius: 7px;
+  font-weight: 700;
+  font-size: .75em;
+  transition: all .5s ease-in-out;
+
+}
+
+.dark-park-search-button:hover{
+  background: #ED6A5A;
+  color: #dde0e0;
+}
+
+.dark-park-search-headline{
+  color: #dde0e0;
+  /* margin-top: 1.5em; */
+  text-align: center;
+  font-size: 1rem;
+}
+
+.dark-park-list-card{
+  background-color: rgba(45, 48, 71, 0.75);
+  width: 80%;
+}
+
 /* ~~~~~~~~~~~~~ PARK LIST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .park-list {
   max-width: 100%;
@@ -347,9 +402,28 @@ header {
   align-items: center;
   margin-top: 1rem;
 }
+
+.full-park-list{
+  background-image: url("./images/parklistbackground.png");
+  background-position:bottom;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  height: 80vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover; 
+}
+
 .park-list-headline {
-  color: rgba(147, 183, 190, 1);
-  margin-left: 1rem;
+  /* color: rgba(147, 183, 190, 1); */
+  color: #dde0e0;
+  /* margin-left: 1rem;
+  margin-bottom: 0; */
+  margin: 1rem 0;
+  /* text-shadow: 2px 2px 10px rgba(0,0,0, .95); */
+  text-align: center;
 }
 
 .park-list-name {
@@ -726,14 +800,85 @@ details {
   }
 
   .forecast_card {
-    background: #dde0e0;
+      background: #dde0e0;
+      width: 100%;  
+      border-radius: 0px 0px 7px 7px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+  }
+
+  .hourly_forecast{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+  }
+
+  .daily_forecast{
+      display: flex;
+      width: 100%;
+      /* height: 10rem; */
+      box-sizing: border-box;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+  }
+
+  .forecast_p {
+    margin: .5rem;
+    }
+
+    .modal_h2{
+        font-size: 2rem;
+    }
+
+    /* ~~~~~~~~~~ PARK SEARCH AND DARK PARK SEARCH ~~~~~~~~~~~~~ */
+
+    .park-search-zip {
+      width: 35%; 
+    }
+
+    .dark-park-search-zip{
+      width: 35%;
+      font-size: .75rem;
+    }
+
+    .park-list-headline{
+      font-size: 2rem;
+    }
+
+    .home-card, .learn-more-card, .park-list-card, .newsfeed-card {
+      width: 80%; 
+      min-width: 80%;
+    }
+
+    .newsfeed-div {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      margin: 0;
+    }
+  
+    .newsfeed-pix {
+      width: 35%;
+      margin-bottom: 0;
+      border: 1px solid #dde0e0;
+      box-shadow: 3px 3px 5px rgba(0,0,0, .25);
+    }
+    /* background: #dde0e0;
     width: 100%;
     border-radius: 0px 0px 7px 7px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-  }
+    justify-content: center; */
+  
 
   .hourly_forecast {
     display: flex;
@@ -846,12 +991,16 @@ details {
     width: 25%;
   }
 
-  .home-card,
-  .learn-more-card,
-  .park-list-card,
-  .newsfeed-card {
-    width: 80%;
-    min-width: 80%;
+  .dark-park-search-zip{
+    width: 25%;
+  }
+
+  .dark-park-search-button {
+    padding: .5rem 2rem;
+  }
+
+  .home-card, .learn-more-card, .park-list-card, .newsfeed-card {
+    width: 80%; 
   }
 
   .comment-card {

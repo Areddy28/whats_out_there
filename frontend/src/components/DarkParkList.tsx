@@ -48,28 +48,14 @@ export default function DarkParkList(): any {
     <div>
 
       <DarkParkSearch />
-
-      {/* dark park pic above the list: */}
-      <div className="addParkListPic">
-        <img className="parkListPic" src={darkpark1} alt="image of stars in the blue sky" />
-        {/* <div className="parkListScroll">
-          <img className="darkpark1" src={darkpark1} />
-          <img className="darkpark2" src={darkpark2} />
-          <img className="darkpark3" src={darkpark3} />
-          <img className="darkpark4" src={darkpark4} />
-        </div> */}
-
-      </div>
-
-
-
-      <div className="park-list">
-        <h2 aria-label="addH2" role="H2" className="park-list-headline">Full Dark Park List</h2>
+      <h2 aria-label="addH2" role="H2" className="park-list-headline">Full Dark Park List</h2>
+      <div className="full-park-list" >
+        {/* <h2 aria-label="addH2" role="H2" className="park-list-headline">Full Dark Park List</h2> */}
 
         {darkParkList.map((data, index) => {
           console.log(data);
           return (
-            <div key={index} className="info-card park-list-card">
+            <div key={index} className="info-card dark-park-list-card">
               {/* <p>{data._id}</p> */}
               <p className="park-list-name"><a href={data.url} target="_blank">{data.name}</a></p>
               <p>{data.state}</p>
@@ -80,6 +66,7 @@ export default function DarkParkList(): any {
               <details>
                 <summary>Click for Full Address</summary>
                 <p><strong>Address:</strong> {data.address}</p>
+                <a href={`https://www.google.com/maps/search/?api=1&query=${data.latlong[0]}%2C${data.latlong[1]}`} target={"_blank"}>Click here for Google Map directions</a>
 
                 {/* https://maps.google.com/?ll=latitude,longitude */}
                 {/* <Link to={{ pathname: `https://maps.google.com/?ll=${data.latlong[0]}${data.latlong[1]}` }} target="_blank" /> */}

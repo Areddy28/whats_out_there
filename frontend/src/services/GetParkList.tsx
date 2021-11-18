@@ -13,6 +13,7 @@ export default function getParkList(): Promise<DarkPark[]> {
 
 // Steph just added this: fetch to display all the darkpark list
 export const fetchParkList = (): Promise<DarkPark[]> => {
+    //get is displaying the data
     return axios.get<DarkPark[]>(`${baseURL}/darkparklist`).then((res) => res.data);
 }
 
@@ -23,6 +24,7 @@ export const fetchParkList = (): Promise<DarkPark[]> => {
 // }
 
 export function upDateOne(id: any, comment: Comments): Promise<Comments> {
+    //put is when the user submits a comment and edits the data
     return axios.put<Comments>(`${baseURL}/darkparks/addcomment/${id}`, comment)
         .then((res) => res.data)
 }

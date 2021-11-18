@@ -21,7 +21,9 @@ routes.get("/darkparks", async (req, res) => {
 routes.put(`/darkparks/addcomment/:id`, async (req, res) => {
     const newComment: Comments = {
         rating: req.body.rating,
-        comment: req.body.comment
+        comment: req.body.comment,
+        userName: req.body.userName, 
+        photoURL: req.body.photoURL
     }
     const id = req.params.id;
     // delete newComment.id

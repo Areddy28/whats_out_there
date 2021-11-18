@@ -24,8 +24,8 @@ export default interface DarkPark {
 export interface Comments {
     rating: number;
     comment: string;
-    userName: null | string; 
-    photoUrl: string; 
+    userName: null | string;
+    photoURL: string;
 }
 
 export interface filteredParks {

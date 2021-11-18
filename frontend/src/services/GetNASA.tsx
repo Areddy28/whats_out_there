@@ -8,6 +8,8 @@ export default function getNASAPic(): Promise<NASAInterface> {
     return axios
     //res json data
     //axios is the library
+    //params api key to get access for my api key
+    //once we have the key we will get the json data in the response
     .get(url,{params:{api_key: nasaKey}})
     .then(res => {
         return res.data;

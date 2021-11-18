@@ -21,7 +21,7 @@ function App() {
     <SearchProvider>
       <div className="App">
         <Router>
-          <Switch> 
+          <Switch>
             <Route path="/news" exact>
               <NewsFeedAll />
             </Route>
